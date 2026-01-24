@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Donald McKinney" }],
   viewport: "width=device-width, initial-scale=1",
   icons: {
-    icon: "/logos--nextjs-icon.svg", // Ensure this file exists in your /public folder
+    icon: "/images/nextjs.png", // Ensure this file exists in your /public folder
   },
 };
 
