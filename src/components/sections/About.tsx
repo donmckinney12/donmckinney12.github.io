@@ -45,8 +45,7 @@ export default function About() {
                 Engineering_Philosophy
               </h2>
               <p className="text-zinc-400 font-mono text-sm leading-relaxed mb-4">
-                Based in <span className="text-white">Oak Park, IL</span>, I operate at the intersection of
-                predictive modeling and full-stack execution.
+                AI/ML Engineer and <span className="text-white">Developer</span>,focused on the intersection of intuitive design and intelligent systems. I bring a full-cycle approach to AI development—handling everything from data engineering and model training to building responsive front-end interfaces.
               </p>
               <p className="text-zinc-500 font-mono text-xs leading-relaxed">
                 As an <span className="text-white">Illinois Institute of Technology</span> graduate (2025),
@@ -63,8 +62,7 @@ export default function About() {
                   <h4 className="text-white font-bold text-sm tracking-tight">The "No-nonsense" Protocol</h4>
                 </div>
                 <p className="text-zinc-500 text-xs font-mono leading-normal">
-                  I prioritize production-ready MLOps over theoretical complexity. If a model can't
-                  be containerized and deployed efficiently, it isn't finished.
+                  AI/ML Engineer with a focus on building scalable, production-ready systems. I bridge the gap between complex model architecture and deployment, specializing in MLOps, LLM orchestration, and RAG pipelines. From designing multi-modal agents to optimizing CI/CD for machine learning, I build AI solutions that solve real business problems, not just research experiments.
                 </p>
               </div>
 

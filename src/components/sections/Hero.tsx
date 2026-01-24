@@ -44,7 +44,10 @@ export default function Hero() {
 
             <div className="flex flex-col gap-4 mb-8 sm:mb-10">
               <p className="text-zinc-400 font-mono text-xs sm:text-sm md:text-base max-w-lg mx-auto lg:mx-0 leading-relaxed uppercase tracking-widest">
-                AI/ML Engineer // 2025 IIT Graduate // Oak Park, IL.
+                AI/ML Engineer | LLMs, MLOps & Scalable Systems
+              </p>
+              <p className="text-zinc-400 font-mono text-xs sm:text-sm md:text-base max-w-lg mx-auto lg:mx-0 leading-relaxed uppercase tracking-widest">
+                Building and deploying production-grade AI agents and end-to-end machine learning pipelines.
               </p>
             </div>
 
