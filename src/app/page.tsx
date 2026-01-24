@@ -3,6 +3,7 @@
 // Navigation & UI Components
 import Navbar from "@/components/navigation/Navbar";
 import SocialNav from "@/components/navigation/SocialNav";
+import RightNav from "@/components/navigation/RightNav";
 import Footer from "@/components/sections/Footer";
 import AIBubble from "@/components/ui/AIBubble";
 
@@ -21,6 +22,8 @@ export default function Home() {
       {/* Global Navigation */}
       <Navbar />
       <SocialNav />
+      <RightNav />
+
 
       {/* 01. Hero (No Tracker needed usually) */}
       <Hero />

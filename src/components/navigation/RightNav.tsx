@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 
 const sections = ['home', 'about', 'stack', 'projects', 'contact'];
 
-export default function RightNavbar() {
+export default function RightNav() {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
