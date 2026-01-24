@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   viewport: "width=device-width, initial-scale=1",
   icons: {
     icon: "/images/nextjs.png", // Ensure this file exists in your /public folder
+    apple: "/images/nextjs.png",
   },
 };
 
