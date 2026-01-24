@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Space_Mono } from "next/font/google";
 import "./globals.css";
 
-// Loading professional typography for the Nexus aesthetic
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const spaceMono = Space_Mono({
   subsets: ["latin"],
@@ -10,21 +9,21 @@ const spaceMono = Space_Mono({
   variable: "--font-space-mono"
 });
 
-// 1. New Viewport Export
+// ✅ 1. Viewport is handled here
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
 };
 
-// 🛡️ IDENTITY_UPLINK: This replaces the "Create Next App" tab name
+// 🛡️ IDENTITY_UPLINK: Cleaned Metadata
 export const metadata: Metadata = {
   title: "Donald McKinney | AI/ML Engineer",
   description: "Portfolio of Donald McKinney - 2025 Illinois Institute of Technology Graduate & AI/ML Engineer specializing in MLOps, Agentic Systems, and Computer Vision.",
   keywords: ["AI Engineer", "MLOps", "Donald McKinney", "IIT Graduate", "Oak Park AI", "Nexus Portfolio"],
   authors: [{ name: "Donald McKinney" }],
-  viewport: "width=device-width, initial-scale=1",
+  // ❌ REMOVED: viewport: "width=device-width, initial-scale=1" (THIS WAS THE ERROR)
   icons: {
-    icon: "/images/nextjs.png", // Ensure this file exists in your /public folder
+    icon: "/images/nextjs.png",
     apple: "/images/nextjs.png",
   },
 };
@@ -39,7 +38,6 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${spaceMono.variable} antialiased bg-black text-white`}
       >
-        {/* The core system node for your high-velocity projects */}
         <main className="min-h-screen">
           {children}
         </main>
