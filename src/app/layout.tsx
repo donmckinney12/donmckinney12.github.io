@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Space_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -9,6 +9,12 @@ const spaceMono = Space_Mono({
   weight: ["400", "700"],
   variable: "--font-space-mono"
 });
+
+// 1. New Viewport Export
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 // 🛡️ IDENTITY_UPLINK: This replaces the "Create Next App" tab name
 export const metadata: Metadata = {
