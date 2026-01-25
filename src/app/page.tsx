@@ -19,52 +19,67 @@ import SectionTracker from "@/components/sections/SectionTracker";
 export default function Home() {
   return (
     <main className="relative bg-black min-h-screen text-white">
-      {/* Global Navigation */}
+      {/* Global Navigation Nodes */}
       <Navbar />
       <SocialNav />
       <RightNav />
 
-
-      {/* 01. Hero (No Tracker needed usually) */}
-      <Hero />
+      {/* 01. Hero Node */}
+      <div id="hero">
+        <Hero />
+      </div>
 
       {/* 02. About Node */}
-      <SectionTracker
-        sectionName="About Donald"
-        suggestion="I can explain Donald's 'No-BS' engineering philosophy or his background in Oak Park."
-      >
-        <About />
-      </SectionTracker>
+      <div id="about">
+        <SectionTracker
+          sectionName="About Donald"
+          suggestion="I can explain Donald's 'No-BS' engineering philosophy or his background in Oak Park."
+        >
+          <About />
+        </SectionTracker>
+      </div>
 
       {/* 03. Skills Node */}
-      <SectionTracker
-        sectionName="Technical Skills"
-        suggestion="Would you like to hear about Donald's proficiency in Python for Data Science or his Linux shell scripting?"
-      >
-        <Skills />
-      </SectionTracker>
+      <div id="skills">
+        <SectionTracker
+          sectionName="Technical Skills"
+          suggestion="Would you like to hear about Donald's proficiency in Python for Data Science or his Linux shell scripting?"
+        >
+          <Skills />
+        </SectionTracker>
+      </div>
 
       {/* 04. Education Node */}
-      <SectionTracker
-        sectionName="Education Timeline"
-        suggestion="Donald is an IIT 2025 graduate. I can also verify his certifications in Google UX Design."
-      >
-        <Timeline />
-      </SectionTracker>
+      <div id="education">
+        <SectionTracker
+          sectionName="Education Timeline"
+          suggestion="Donald is an IIT 2025 graduate. I can also verify his certifications in Google UX Design."
+        >
+          <Timeline />
+        </SectionTracker>
+      </div>
 
       {/* 05. Projects Node */}
-      <SectionTracker
-        sectionName="MLOps Projects"
-        suggestion="I noticed you're exploring the deployments. Would you like a technical breakdown of the SkyLink architecture?"
-      >
-        <Projects />
-      </SectionTracker>
+      <div id="projects">
+        <SectionTracker
+          sectionName="MLOps Projects"
+          suggestion="I noticed you're exploring the deployments. Would you like a technical breakdown of the SkyLink architecture?"
+        >
+          <Projects />
+        </SectionTracker>
+      </div>
 
       {/* 06. Communication Node */}
-      <Contact />
+      <div id="contact">
+        <Contact />
+      </div>
 
-      {/* Footer & Assistant */}
-      <Footer />
+      {/* 07. Footer Node */}
+      <div id="footer">
+        <Footer />
+      </div>
+
+      {/* Assistant Node */}
       <AIBubble />
     </main>
   );

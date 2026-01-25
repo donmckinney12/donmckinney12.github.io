@@ -6,11 +6,13 @@ import Link from "next/link";
 import { Terminal, Cpu, Radio, Activity } from "lucide-react";
 
 const navLinks = [
+  { name: "Home" , href: "#hero" },
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Education", href: "#education" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
+  { name: "Footer", href: "#footer"},
 ];
 
 export default function Navbar() {

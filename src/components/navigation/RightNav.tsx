@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Activity, ShieldCheck, Cpu } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-const sections = ['home', 'about', 'stack', 'projects', 'contact'];
+const sections = ['home', 'about', 'skills', 'education', 'projects', 'contact', 'footer'];
 
 export default function RightNav() {
   const [activeSection, setActiveSection] = useState('home');
