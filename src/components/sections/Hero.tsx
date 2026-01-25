@@ -5,7 +5,7 @@ import { Terminal, FileDown, Globe } from "lucide-react";
 
 export default function Hero() {
   const handleResumeClick = () => {
-    const resumeUrl = "/Donald_McKinney_Resume.pdf";
+    const resumeUrl = "/resume/donald_mcKinney_cv.pdf";
     window.open(resumeUrl, "_blank");
   };
 
