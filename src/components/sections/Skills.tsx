@@ -15,7 +15,7 @@ const skillGroups = [
     category: "Engineering_Ops",
     icon: <Terminal className="text-accent" size={20} />,
     description: "Production-grade deployment and automation.",
-    skills: ["Linux/Shell", "Docker", "Git", "MLOps Pipelines", "AWS"]
+    skills: ["Go (Golang)", "Linux/Shell", "Docker", "Git", "MLOps Pipelines", "AWS"]
   },
   {
     category: "Architecture",
@@ -47,14 +47,23 @@ export default function Skills() {
       </div>
 
       {/* Skills Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <motion.div 
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+        }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-6"
+      >
         {skillGroups.map((group, i) => (
           <motion.div
             key={group.category}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1, duration: 0.8 }}
+            variants={{
+              hidden: { opacity: 0, y: 30, scale: 0.95 },
+              visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+            }}
             className="glass-card p-8 rounded-[2.5rem] relative overflow-hidden group border border-white/5 hover:border-accent/30 transition-all duration-500"
           >
             {/* Hover Background Effect */}
@@ -73,9 +82,12 @@ export default function Skills() {
             </div>
 
             <div className="flex flex-wrap gap-2">
-              {group.skills.map((skill) => (
-                <div
+              {group.skills.map((skill, j) => (
+                <motion.div
                   key={skill}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 + j * 0.05 }}
                   className="relative group/tag"
                 >
                   <span className="block px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-zinc-400 text-[10px] font-mono uppercase tracking-widest group-hover:text-accent group-hover:border-accent/20 transition-all cursor-default">
@@ -83,12 +95,20 @@ export default function Skills() {
                   </span>
                   {/* Skill Pulse Indicator */}
                   <div className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-accent/20 opacity-0 group-hover/tag:opacity-100 animate-pulse transition-opacity" />
-                </div>
+                </motion.div>
               ))}
             </div>
+
+            {/* Scanning Line Animation on Card Entry */}
+            <motion.div 
+              initial={{ top: "-100%" }}
+              whileInView={{ top: "100%" }}
+              transition={{ duration: 1.5, ease: "linear", delay: i * 0.2 }}
+              className="absolute left-0 w-full h-1/2 bg-gradient-to-b from-transparent via-accent/5 to-transparent pointer-events-none"
+            />
           </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {/* Footer System Status */}
       <div className="mt-12 flex items-center gap-6 py-6 border-t border-white/5">

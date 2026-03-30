@@ -1,8 +1,33 @@
 // src/app/api/chat/route.ts
 import { NextResponse } from 'next/server';
 
+// 🛡️ IN-MEMORY RATE LIMITER (Simple process-level cache)
+const rateLimitMap = new Map<string, { count: number, lastReset: number }>();
+const LIMIT = 5; // 5 requests
+const WINDOW = 60 * 1000; // 1 minute
+
 export async function POST(req: Request) {
   try {
+    const ip = req.headers.get('x-forwarded-for') || 'anonymous';
+    const now = Date.now();
+    
+    // 🛡️ 0. RATE LIMIT CHECK
+    const userData = rateLimitMap.get(ip) || { count: 0, lastReset: now };
+    
+    if (now - userData.lastReset > WINDOW) {
+      userData.count = 0;
+      userData.lastReset = now;
+    }
+    
+    if (userData.count >= LIMIT) {
+      return NextResponse.json({ 
+        text: "NEURAL_LINK_OVERLOADED::COOLDOWN_ACTIVE. Please wait before next transmission." 
+      }, { status: 429 });
+    }
+    
+    userData.count++;
+    rateLimitMap.set(ip, userData);
+
     const { message } = await req.json();
     const apiKey = process.env.OPENAI_API_KEY;
 

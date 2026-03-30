@@ -13,10 +13,16 @@ interface TimelineItem {
 
 const educationData: TimelineItem[] = [
   {
+    date: "Jan 2025",
+    institution: "App Brewery / Udemy",
+    degree: "The Complete Full-Stack Web Development Bootcamp",
+    details: ["Completed comprehensive program", "Focusing on front-end and back-end development."]
+  },
+  {
     date: "May 2025",
     institution: "Illinois Institute of Technology",
     degree: "Computer Science Graduation",
-    details: ["Completed advanced studies in specialized AI/ML subfields.", "Graduation ceremony held May 17, 2025."]
+    details: ["Graduated with a BS in Computer Science with honors.", "Graduation ceremony held May 17, 2025."]
   },
   {
     date: "Dec 2025",
@@ -25,22 +31,10 @@ const educationData: TimelineItem[] = [
     details: ["Completed comprehensive program focusing on accessible, user-centric design.", "Applied high-fidelity wireframing to engineering projects."]
   },
   {
-    date: "Dec 2025",
-    institution: "IBM",
-    degree: "Hands-on Linux Commands & Shell Scripting",
-    details: ["Mastered automated system maintenance and environment parity."]
-  },
-  {
-    date: "Nov 2025",
-    institution: "IBM",
-    degree: "Developing AI Applications with Python & Flask",
-    details: ["Architected scalable backend infrastructure for real-time ML inference."]
-  },
-  {
-    date: "Oct 2025",
-    institution: "IBM & Coursera",
-    degree: "Generative AI & Prompt Engineering Specialist",
-    details: ["Focused on agentic workflows, LangChain implementation, and model tuning."]
+    date: "Jan 2026",
+    institution: "IBM / Coursera",
+    degree: "Generative AI Professional Certificate",
+    details: ["Completed comprehensive program in Generative AI Focusing on prompt engineering, ML, DL, LLMs, GenAI, and Agentic AI", "Applied prompt engineering to build and deploy AI agents and end-to-end machine learning pipelines."]
   }
 ];
 
@@ -58,34 +52,54 @@ export default function Timeline() {
             </p>
           </div>
 
-          <div className="relative border-l border-white/10 ml-4 md:ml-6 space-y-12">
+          <div className="relative ml-4 md:ml-6 space-y-12">
+            {/* Animated Vertical Line */}
+            <motion.div 
+              initial={{ height: 0 }}
+              whileInView={{ height: "100%" }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="absolute left-0 top-0 w-[1px] bg-gradient-to-b from-accent/50 via-white/10 to-transparent origin-top"
+            />
+
             {educationData.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="relative pl-8 md:pl-12"
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ delay: index * 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="relative pl-8 md:pl-12 group"
               >
                 {/* Timeline Node Icon */}
-                <div className="absolute -left-3 top-0 bg-[#030303] p-1 border border-white/10 rounded-full text-accent shadow-[0_0_10px_#00f2ff50]">
+                <motion.div 
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ delay: index * 0.2 + 0.3, type: "spring" }}
+                  className="absolute -left-3 top-0 bg-[#030303] p-1 border border-white/10 rounded-full text-accent shadow-[0_0_10px_#00f2ff50] group-hover:shadow-[0_0_20px_#00f2ff] transition-all duration-500"
+                >
                   <GraduationCap size={16} />
-                </div>
+                </motion.div>
 
-                <span className="text-accent font-mono text-[10px] uppercase tracking-widest mb-2 block">
+                <span className="text-accent font-mono text-[10px] uppercase tracking-widest mb-2 block opacity-70 group-hover:opacity-100 transition-opacity">
                   [{item.date}]
                 </span>
 
-                <h3 className="text-xl font-bold text-white font-mono mb-1">{item.degree}</h3>
+                <h3 className="text-xl font-bold text-white font-mono mb-1 group-hover:text-accent transition-colors">{item.degree}</h3>
                 <p className="text-gray-500 text-sm font-mono mb-4">{item.institution}</p>
 
                 <ul className="space-y-2">
                   {item.details.map((detail, i) => (
-                    <li key={i} className="flex items-start gap-2 text-gray-400 text-xs leading-relaxed">
+                    <motion.li 
+                      key={i}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.2 + i * 0.1 + 0.5 }}
+                      className="flex items-start gap-2 text-gray-400 text-xs leading-relaxed"
+                    >
                       <span className="text-accent mt-1 opacity-50">/</span>
                       {detail}
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
               </motion.div>

@@ -50,24 +50,30 @@ export default function Contact() {
 
           {/* Quick Message Node */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "circOut" }}
             viewport={{ once: true }}
-            className="p-8 rounded-3xl bg-white/5 border border-white/10"
+            className="p-8 rounded-3xl bg-white/5 border border-white/10 relative group"
           >
-            <form className="space-y-4">
-              <div>
+            <form className="space-y-4 relative z-10">
+              <motion.div initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>
                 <label className="block text-[10px] font-mono text-zinc-500 uppercase mb-2">Identifier</label>
-                <input type="text" placeholder="Your Name" className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:border-accent/50 outline-none transition-all" />
-              </div>
-              <div>
+                <input type="text" placeholder="Your Name" className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:border-accent/50 outline-none transition-all placeholder:text-zinc-700" />
+              </motion.div>
+              <motion.div initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}>
                 <label className="block text-[10px] font-mono text-zinc-500 uppercase mb-2">Message_Payload</label>
-                <textarea rows={4} placeholder="Type your message..." className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:border-accent/50 outline-none transition-all resize-none" />
-              </div>
-              <button className="w-full py-4 bg-accent text-black font-bold rounded-xl flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(0,242,255,0.4)] transition-all">
+                <textarea rows={4} placeholder="Type your message..." className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:border-accent/50 outline-none transition-all resize-none placeholder:text-zinc-700" />
+              </motion.div>
+              <motion.button 
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full py-4 bg-accent text-black font-bold rounded-xl flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(0,242,255,0.4)] transition-all font-mono text-[10px] tracking-widest uppercase"
+              >
                 <Send size={18} /> INITIATE_TRANSMISSION
-              </button>
+              </motion.button>
             </form>
+            <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl -z-0" />
           </motion.div>
         </div>
       </div>

@@ -40,10 +40,13 @@ export default function Footer() {
                   key={i}
                   href={link.href}
                   target="_blank"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
                   whileHover={{ y: -3, color: "#00f2ff" }}
-                  className="p-3 rounded-xl bg-white/5 border border-white/10 text-zinc-500 hover:border-accent/30 transition-all"
+                  className="p-3 rounded-xl bg-white/5 border border-white/10 text-zinc-500 hover:border-accent/30 transition-all font-mono text-[10px] uppercase group flex items-center gap-2"
                 >
-                  {link.icon}
+                  {link.icon} <span className="hidden group-hover:block transition-all">{link.label}</span>
                 </motion.a>
               ))}
             </div>

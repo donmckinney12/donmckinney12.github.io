@@ -54,8 +54,14 @@ export default function Resume() {
             </div>
 
             {/* Right Side: Visual Data Stats */}
-            <div className="w-full lg:w-80 space-y-4">
-              <div className="bg-black/40 border border-white/5 p-6 rounded-3xl space-y-4">
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              viewport={{ once: true }}
+              className="w-full lg:w-80 space-y-4"
+            >
+              <div className="bg-black/40 border border-white/5 p-6 rounded-3xl space-y-4 hover:border-accent/20 transition-all group">
                 <div className="flex justify-between items-center">
                   <span className="text-[9px] font-mono text-zinc-500 uppercase">Security_Level</span>
                   <span className="text-[9px] font-mono text-green-500 uppercase font-bold tracking-widest flex items-center gap-1">
@@ -77,7 +83,7 @@ export default function Resume() {
                   </span>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>

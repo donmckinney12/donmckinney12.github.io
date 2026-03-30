@@ -35,49 +35,60 @@ export default function About() {
 
           {/* Right Column: Narrative & Philosophy */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+            }}
             className="space-y-8"
           >
-            <div>
+            <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
               <h2 className="text-4xl font-bold text-white mb-4 tracking-tighter">
                 Engineering_Philosophy
               </h2>
               <p className="text-zinc-400 font-mono text-sm leading-relaxed mb-4">
-                AI/ML Engineer and <span className="text-white">Developer</span>,focused on the intersection of intuitive design and intelligent systems. I bring a full-cycle approach to AI development—handling everything from data engineering and model training to building responsive front-end interfaces.
+                AI/ML Engineer and <span className="text-white">Developer</span>, focused on the intersection of intuitive design and intelligent systems. I bring a full-cycle approach to AI development—handling everything from data engineering and model training to building responsive front-end interfaces.
               </p>
               <p className="text-zinc-500 font-mono text-xs leading-relaxed">
                 As an <span className="text-white">Illinois Institute of Technology</span> graduate (2025),
                 I specialize in building autonomous agents and vision systems that solve real-world
                 latency and accuracy bottlenecks.
               </p>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 gap-4">
-              {/* Core Tenet 1 */}
-              <div className="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-accent/30 transition-colors group">
-                <div className="flex items-center gap-4 mb-2">
-                  <Zap size={18} className="text-accent group-hover:animate-pulse" />
-                  <h4 className="text-white font-bold text-sm tracking-tight">The "No-nonsense" Protocol</h4>
-                </div>
-                <p className="text-zinc-500 text-xs font-mono leading-normal">
-                  AI/ML Engineer with a focus on building scalable, production-ready systems. I bridge the gap between complex model architecture and deployment, specializing in MLOps, LLM orchestration, and RAG pipelines. From designing multi-modal agents to optimizing CI/CD for machine learning, I build AI solutions that solve real business problems, not just research experiments.
-                </p>
-              </div>
-
-              {/* Core Tenet 2 */}
-              <div className="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-accent/30 transition-colors group">
-                <div className="flex items-center gap-4 mb-2">
-                  <Target size={18} className="text-accent group-hover:animate-pulse" />
-                  <h4 className="text-white font-bold text-sm tracking-tight">Multi-modal Mastery</h4>
-                </div>
-                <p className="text-zinc-500 text-xs font-mono leading-normal">
-                  Specializing in <span className="text-accent">YOLOv8</span> and
-                  <span className="text-accent"> Agentic RAG</span>, I build systems that
-                  process vision, text, and data simultaneously for truly intelligent automation.
-                </p>
-              </div>
+              {[
+                { 
+                  icon: <Zap size={18} className="text-accent group-hover:animate-pulse" />, 
+                  title: 'The "No-nonsense" Protocol', 
+                  text: 'AI/ML Engineer built for production. I bridge the gap between complex AI logic and high-performance backends using Python and Go, specializing in MLOps, LLM orchestration, and RAG pipelines.' 
+                },
+                { 
+                  icon: <Target size={18} className="text-accent group-hover:animate-pulse" />, 
+                  title: 'Systems & Intelligence', 
+                  text: 'Specializing in Agentic RAG and Go-based microservices, I build autonomous systems that process multi-modal data with elite efficiency and scale.' 
+                }
+              ].map((tenet, i) => (
+                <motion.div 
+                  key={i}
+                  variants={{
+                    hidden: { opacity: 0, x: 20 },
+                    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                  }}
+                  className="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-accent/30 transition-colors group relative overflow-hidden"
+                >
+                  <div className="flex items-center gap-4 mb-2">
+                    {tenet.icon}
+                    <h4 className="text-white font-bold text-sm tracking-tight">{tenet.title}</h4>
+                  </div>
+                  <p className="text-zinc-500 text-xs font-mono leading-normal relative z-10">
+                    {tenet.text}
+                  </p>
+                  <div className="absolute inset-0 bg-gradient-to-r from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 

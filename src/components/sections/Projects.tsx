@@ -49,7 +49,7 @@ const projectData: Project[] = [
     slug: "anomaly-detection",
     image: "/images/anomaly_detection.png",
     description: "High-velocity monitoring system utilizing Isolation Forest models for real-time log analysis.",
-    tags: ["Scikit-Learn", "Docker", "MLOps"],
+    tags: ["Scikit-Learn", "Go", "Docker", "MLOps"],
     githubUrl: "https://github.com/donmckinney12/Real-Time-Anomaly-Detection-Pipeline",
     stats: { label: "Model", value: "IsoForest", icon: <ShieldCheck size={14} /> }
   },
@@ -162,11 +162,28 @@ export default function Projects() {
       </div>
 
       {/* High-Tech 3x2 Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <motion.div 
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+        }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
         {projectData.map((project, index) => (
-          <ProjectCard key={project.slug} project={project} index={index} />
+          <motion.div
+            key={project.slug}
+            variants={{
+              hidden: { opacity: 0, y: 30, scale: 0.95 },
+              visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+            }}
+          >
+            <ProjectCard project={project} index={index} />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

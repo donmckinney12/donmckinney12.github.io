@@ -11,6 +11,7 @@ export default function AIBubble() {
   const [currentMessage, setCurrentMessage] = useState("System stable. Awaiting technical command.");
   const [input, setInput] = useState("");
   const [systemLog, setSystemLog] = useState("UPLINK_STABLE::OAK_PARK");
+  const [cooldown, setCooldown] = useState(0);
   const isProcessing = useRef(false);
 
   // --- 🎙️ NATURAL VOICE OUTPUT ---
@@ -33,9 +34,16 @@ export default function AIBubble() {
     }
   };
 
+  useEffect(() => {
+    if (cooldown > 0) {
+      const timer = setTimeout(() => setCooldown(cooldown - 1), 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [cooldown]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!input.trim() || isProcessing.current) return;
+    if (!input.trim() || isProcessing.current || cooldown > 0) return;
 
     const userQuery = input;
     setInput("");
@@ -51,6 +59,15 @@ export default function AIBubble() {
       });
 
       const data = await res.json();
+      
+      if (res.status === 429) {
+        setCurrentMessage("NEURAL_LINK_OVERLOADED::COOLDOWN_ACTIVE. System requires re-stabilization.");
+        setSystemLog("CRITICAL_LOAD_429");
+        setCooldown(30); // 30 second cooldown
+        speak("Neural link overloaded. System cooling down.");
+        return;
+      }
+
       setCurrentMessage(data.text);
       setSystemLog("DATAFRAME_DECRYPTED");
 
@@ -114,11 +131,16 @@ export default function AIBubble() {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="INPUT_COMMAND..."
-                className="w-full bg-black/40 border border-white/10 rounded-2xl py-4 pl-8 pr-12 text-[10px] font-mono text-white focus:outline-none focus:border-accent/40"
+                disabled={cooldown > 0}
+                placeholder={cooldown > 0 ? `COOLING_DOWN (${cooldown}s)...` : "INPUT_COMMAND..."}
+                className={`w-full bg-black/40 border ${cooldown > 0 ? 'border-red-500/30' : 'border-white/10'} rounded-2xl py-4 pl-8 pr-12 text-[10px] font-mono text-white focus:outline-none focus:border-accent/40 disabled:opacity-50 transition-all`}
               />
-              <button type="submit" className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-accent">
-                <Send size={14} />
+              <button 
+                type="submit" 
+                disabled={cooldown > 0}
+                className={`absolute right-3 top-1/2 -translate-y-1/2 ${cooldown > 0 ? 'text-red-500/50' : 'text-zinc-500 hover:text-accent'}`}
+              >
+                {cooldown > 0 ? <Activity size={14} className="animate-pulse" /> : <Send size={14} />}
               </button>
             </form>
 

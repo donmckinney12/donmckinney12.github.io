@@ -6,13 +6,13 @@ A high-performance portfolio engineered to demonstrate the bridge between raw da
 ---
 
 ## 🛠️ System Architecture
-The portfolio operates on a modular, component-based architecture designed for high-velocity data ingestion and user interaction.
+The portfolio operates on a modular, component-based architecture designed for high-velocity data ingestion and immersive user interaction.
 
-
-
-* **Logic Core**: Next.js 15 (App Router)
-* **Intelligence Node**: Aira_v1.0 (Integrated Gemini 1.5 Flash Inference)
-* **Styling Engine**: Tailwind CSS v4 + Framer Motion
+* **Logic Core**: Next.js 15 (App Router) + **Go (Golang)** Micro-services
+* **Intelligence Node**: **AIRA_v2.0** (Integrated Gemini 1.5 Flash + **Rate-Limiting Logic**)
+* **Data Flow**: **Agentic RAG** pipelines built with **LangChain** and Python
+* **Motion Engine**: **Motion Narrative Masterpiece** (Framer Motion, 3D Tilt, **Character Typewriter**)
+* **Styling Engine**: Tailwind CSS v4
 * **Documentation**: Dynamic Markdown-to-Prose parsing for system architecture logs
 
 ---
@@ -26,8 +26,12 @@ The portfolio operates on a modular, component-based architecture designed for h
 
 
 ### 📁 Enterprise-Grade RAG System
-* **Tech Stack**: LangChain, OpenAI, FAISS Vector DB, Flask.
+* **Tech Stack**: LangChain, OpenAI, FAISS Vector DB, Flask, Python.
 * **Capability**: Semantic retrieval on high-density PDF documentation using localized vector storage.
+
+### 🛡️ Anomaly Detection Pipeline
+* **Tech Stack**: Scikit-Learn, **Go**, Docker, MLOps.
+* **Capability**: High-velocity monitoring system utilizing Isolation Forest models for real-time log analysis.
 
 
 
@@ -38,6 +42,8 @@ The portfolio operates on a modular, component-based architecture designed for h
 ---
 
 ## 📈 System Evolution (Recent Logs)
+* **Mar 2026**: Initialized **AIRA_v2.0** with integrated rate-limiting and neural link protection.
+* **Feb 2026**: Deployed **Motion Narrative Masterpiece** v1.0 (Typewriter & 3D Interactive Nodes).
 * **May 2025**: Graduated from **Illinois Institute of Technology** (Computer Science).
 * **Dec 2025**: Completed **Google UX Design Professional Certificate**.
 * **Dec 2025**: Certified in **IBM Linux Commands & Shell Scripting**.
