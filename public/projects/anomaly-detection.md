@@ -17,7 +17,7 @@ This project is a real-time monitoring system designed to detect system performa
 
 ## 📦 Installation & Setup
 1. **Clone the Repo:**
-   `git clone https://github.com/YOUR_USERNAME/real-time-anomaly-detection.git`
+   `git clone https://github.com/donmckinney12/Real-Time-Anomaly-Detection-Pipeline.git`
 2. **Launch with Docker:**
    `docker-compose up --build`
 3. **Access Dashboard:** Navigate to `http://localhost:5000`

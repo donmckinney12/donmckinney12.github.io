@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   authors: [{ name: "Donald McKinney" }],
   // ❌ REMOVED: viewport: "width=device-width, initial-scale=1" (THIS WAS THE ERROR)
   icons: {
-    icon: "/images/nextjs.png",
-    apple: "/images/nextjs.png",
+    icon: "/favicon.png",
+    apple: "/favicon.png",
   },
 };
 

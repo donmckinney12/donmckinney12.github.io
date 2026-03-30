@@ -8,10 +8,10 @@ A high-performance portfolio engineered to demonstrate the bridge between raw da
 ## 🛠️ System Architecture
 The portfolio operates on a modular, component-based architecture designed for high-velocity data ingestion and immersive user interaction.
 
-* **Logic Core**: Next.js 15 (App Router) + **Go (Golang)** Micro-services
-* **Intelligence Node**: **AIRA_v2.0** (Integrated Gemini 1.5 Flash + **Rate-Limiting Logic**)
-* **Data Flow**: **Agentic RAG** pipelines built with **LangChain** and Python
-* **Motion Engine**: **Motion Narrative Masterpiece** (Framer Motion, 3D Tilt, **Character Typewriter**)
+* **Logic Core**: Next.js 15 (App Router) + Go (Golang) Micro-services
+* **Intelligence Node**: AIRA Nexus_v4 (Integrated Gemini 1.5 Flash + Rate-Limiting Logic)
+* **Data Flow**: Agentic RAG pipelines built with LangChain and Python
+* **Motion Engine**: Framer Motion, 3D Tilt, Character Typewriter
 * **Styling Engine**: Tailwind CSS v4
 * **Documentation**: Dynamic Markdown-to-Prose parsing for system architecture logs
 
@@ -42,8 +42,8 @@ The portfolio operates on a modular, component-based architecture designed for h
 ---
 
 ## 📈 System Evolution (Recent Logs)
-* **Mar 2026**: Initialized **AIRA_v2.0** with integrated rate-limiting and neural link protection.
-* **Feb 2026**: Deployed **Motion Narrative Masterpiece** v1.0 (Typewriter & 3D Interactive Nodes).
+* **Mar 2026**: Initialized **AIRA Nexus_v4** with integrated rate-limiting and neural link protection.
+* **Feb 2026**: Deployed **System Node** v1.0 (Typewriter & 3D Interactive Nodes).
 * **May 2025**: Graduated from **Illinois Institute of Technology** (Computer Science).
 * **Dec 2025**: Completed **Google UX Design Professional Certificate**.
 * **Dec 2025**: Certified in **IBM Linux Commands & Shell Scripting**.
@@ -54,8 +54,8 @@ The portfolio operates on a modular, component-based architecture designed for h
 ## 📡 Transmission
 Ready for new project parameters. Initialize contact via the **Message_Terminal** or connect through **Connect_Nodes**.
 
-* **GitHub**: [donmckinney12](https://github.com/donmckinney12)
-* **LinkedIn**: [Donald McKinney](https://linkedin.com/in/donmckinney12)
+* **GitHub**: [github.com/Donmckinney12](https://github.com/Donmckinney12)
+* **LinkedIn**: [linkedin.com/in/donald-mckinney-5448602b2](https://linkedin.com/in/donald-mckinney-5448602b2)
 * **Email**: [mckinneydonald321@gmail.com](mailto:mckinneydonald321@gmail.com)
 
 ---

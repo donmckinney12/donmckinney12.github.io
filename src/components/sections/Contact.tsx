@@ -39,10 +39,10 @@ export default function Contact() {
             </div>
 
             <div className="flex gap-4">
-              <a href="https://github.com" target="_blank" className="flex-1 p-4 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center gap-2 text-zinc-400 hover:text-white hover:bg-white/10 transition-all">
+              <a href="https://github.com/Donmckinney12" target="_blank" className="flex-1 p-4 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center gap-2 text-zinc-400 hover:text-white hover:bg-white/10 transition-all">
                 <Github size={20} /> <span className="text-xs font-mono">GITHUB</span>
               </a>
-              <a href="https://linkedin.com" target="_blank" className="flex-1 p-4 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center gap-2 text-zinc-400 hover:text-white hover:bg-white/10 transition-all">
+              <a href="https://linkedin.com/in/donald-mckinney-5448602b2" target="_blank" className="flex-1 p-4 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center gap-2 text-zinc-400 hover:text-white hover:bg-white/10 transition-all">
                 <Linkedin size={20} /> <span className="text-xs font-mono">LINKEDIN</span>
               </a>
             </div>

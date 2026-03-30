@@ -5,8 +5,8 @@ import { FileText, Download, ExternalLink, ShieldCheck, Database } from "lucide-
 
 export default function Resume() {
   const handleDownload = () => {
-    // Replace with your actual hosted PDF link (Google Drive, Vercel Blob, etc.)
-    window.open('/Donald_McKinney_Resume_2026.pdf', '_blank');
+    // Update with consolidated path
+    window.open('/resume/donaldmckinney_cv.pdf', '_blank');
   };
 
   return (
@@ -44,7 +44,7 @@ export default function Resume() {
                 </button>
 
                 <button
-                  onClick={() => window.open('https://linkedin.com/in/your-profile', '_blank')}
+                  onClick={() => window.open('https://linkedin.com/in/donald-mckinney-5448602b2', '_blank')}
                   className="flex items-center gap-3 px-8 py-4 bg-white/5 border border-white/10 text-white font-mono text-[10px] uppercase tracking-widest rounded-2xl hover:bg-white/10 transition-all"
                 >
                   <ExternalLink size={16} />

@@ -18,5 +18,6 @@ An end-to-end Retrieval-Augmented Generation (RAG) system built with **Python**,
 ## 📦 Installation & Setup
 1. **Clone the repo**:
    ```bash
-   git clone [https://github.com/your-username/Enterprise-Rag-Project.git](https://github.com/your-username/Enterprise-Rag-Project.git)
-   cd Enterprise-Rag-Project
+   git clone https://github.com/donmckinney12/Enterprise-Grade-RAG-System.git
+   cd Enterprise-Grade-RAG-System
+   ```

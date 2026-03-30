@@ -68,11 +68,24 @@ export default function AIBubble() {
         return;
       }
 
-      setCurrentMessage(data.text);
+      const fullMessage = data.text;
+      setCurrentMessage(""); // Clear for typewriter
+      
+      let i = 0;
+      const speed = 25; // ms per character
+      const typeWriter = () => {
+        if (i < fullMessage.length) {
+          setCurrentMessage(prev => prev + fullMessage.charAt(i));
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      };
+      
+      typeWriter();
       setSystemLog("DATAFRAME_DECRYPTED");
 
       // Automatic Natural Voice Response
-      speak(data.text);
+      speak(fullMessage);
 
     } catch (err) {
       setCurrentMessage("CRITICAL_ERROR::UPLINK_STALLED");

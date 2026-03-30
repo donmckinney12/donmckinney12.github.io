@@ -30,6 +30,32 @@
     background-color: rgba(0, 242, 255, 0.4);
     color: white;
   }
+
+  /* Global Custom Scrollbar */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 242, 255, 0.3) transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 242, 255, 0.2);
+    border-radius: 10px;
+    border: 2px solid black;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 242, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.4);
+  }
 }
 
 /* Nexus Core Utilities */

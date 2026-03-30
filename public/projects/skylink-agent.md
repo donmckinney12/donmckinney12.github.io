@@ -16,4 +16,5 @@ An enterprise-grade customer support agent built with **Gemini 1.5 Flash** and *
 ## 📦 Installation & Setup
 1. **Clone the repo:**
    ```bash
-   git clone [https://github.com/your-username/airline-multimodal-agent.git](https://github.com/your-username/airline-multimodal-agent.git)
+   git clone https://github.com/donmckinney12/SkyLink-Agent.git
+   ```

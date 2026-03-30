@@ -13,8 +13,11 @@ Frontend: Modern CSS Dashboard with AJAX for seamless AI inference.
 
 Deployment: Containerized via Docker and hosted on GitHub Pages for the web interface.
 
-🛠️ Setup & Usage (Local Execution)
-Build: docker build -t smart-city-vision .
+## 📦 Installation & Setup
+1. **Clone the Repo:**
+   `git clone https://github.com/donmckinney12/Smart-City-Vision.git`
+2. **Build:** 
+   `docker build -t smart-city-vision .`
 
 Run: docker run --rm -p 5000:5000 --name smart-city-container smart-city-vision.
 
